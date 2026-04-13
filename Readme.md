@@ -115,6 +115,8 @@ License: [Creative Commons Attribution 4.0 International License](https://creati
 
 The HackRF Pro ships with a built-in TCXO that's decent for casual use, but it still drifts - typically a few ppm over temperature changes and time. At higher frequencies that drift gets multiplied: even 1 ppm of error at 1 GHz means you're off by 1 kHz, which is enough to smear a narrowband signal right out of your passband. For wideband scanning that might not matter much, but the moment you're trying to do anything precise - demodulating a narrowband FM signal, characterizing a filter's passband edges, or comparing signals across sessions - that drift becomes the limiting factor. The GPSDO locks the HackRF's sample clock to GPS-disciplined cesium references, pushing accuracy down to parts-per-billion and eliminating drift as a variable entirely. It turns the HackRF from a "good enough" receiver into a calibrated instrument.
 
+To see the difference yourself, tune GQRX to a known stable signal - a local NOAA weather broadcast or an AM carrier works well. With the HackRF running on its internal oscillator, watch the waterfall over 15-20 minutes as the board warms up. You'll see the signal trace slowly wander left or right as the internal clock drifts, sometimes shifting by several hundred hertz. Now connect the GPSDO to CLKIN and restart GQRX. That same signal will pin to a single column in the waterfall and stay there indefinitely - no wander, no drift, just a rock-solid line. The visual difference is immediate and striking: a meandering smear versus a razor-sharp trace.
+
 ---
 
 ## Next Steps
