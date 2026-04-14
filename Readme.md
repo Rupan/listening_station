@@ -25,7 +25,9 @@ This listening station delivers professional-grade performance through careful c
 | [Mini-Circuits DC to 6 GHz Attenuator](https://www.minicircuits.com/WebStore/dashboard.html?model=K1-VAT-A%2B) | K1-VAT-A+ | Input attenuation for high-power signals |
 | [Double-shielded RG316 coax](https://www.ebay.com/itm/145242622653) | 10cm, SMA-M to SMA-M | Connects GPSDO to HackRF |
 | [15cm M-F RG316 coax pigtail](https://www.amazon.com/dp/B091TH6CCJ?th=1) | B091TH6CCJ | SMA bulkhead and HackRF Pro RF port with inline limiter |
-| SMA-M antenna | - | Your choice of antenna(s) |
+| [SMA-M telescopic antenna](https://greatscottgadgets.com/ant500/) | ANT500 | Atatches to SMA bulkhead |
+
+Also check out [Signal Stick SMA-M](https://signalstuff.com/products/st-sma-m/) antennas for easy access to HAM bands.
 
 ### Clock & Timing
 
@@ -49,10 +51,10 @@ This listening station delivers professional-grade performance through careful c
 
 #### Base Assembly (two discs, each 20cm radius)
 
-| Component | Material & Spec | Purpose |
-|-----------|-----------------|---------|
-| Base plate | FR-4 G10 Black fiberglass, 0.125" | Primary mounting surface |
-| Ground plane | 5052 H32 Aluminum, 0.080" | RF shielding and counterpoise |
+| Component | Material & Spec | Purpose | Preview |
+|-----------|-----------------|---------|---------|
+| Base plate | FR-4 G10 Black fiberglass, 0.125" | Primary mounting surface | ![Base plate](assembly/base_plate.png) |
+| Ground plane | 5052 H32 Aluminum, 0.080" | RF shielding and counterpoise | ![Ground plane](assembly/ground_plane.png) |
 
 **Manufacturing files:**
 - [Base plate](assembly/base_plate.dxf)
@@ -68,11 +70,13 @@ License: [Creative Commons Attribution 4.0 International License](https://creati
 
 | Type | Specification | Quantity | Application |
 |------|---------------|----------|-------------|
-| M3-0.5 machine screws | Inner mounts | - | HackRF & GPSDO |
-| M2.5-0.5 thumb screws | 8mm | 12 per disc | Outer plate assembly |
-| M2.5-0.5 standoffs | 30mm | 12 per disc | Plate spacers |
-| Mounting holes (HackRF) | For 10mm machine screws | 4 x 2 | Inner mounting plate |
-| Mounting holes (GPSDO) | For 6mm machine screws | 4 x 2 | Inner mounting plate |
+| M3-0.5 machine screws | 10mm | 4 | HackRF mounting brackets |
+| M3-0.5 machine screws | 6mm | 4 | GPSDO mounting bracket |
+| M2.5-0.5 thumb screws | 8mm | 6 per disc (12 total) | Attach outer plate standoffs |
+| M2.5-0.5 F-F standoffs | 20mm | 6 total | Plate spacers |
+| M2.5-0.5 M-F standoffs | 30mm | 6 total | Plate spacers |
+| Mounting holes (N-S) | For 10mm machine screws | 4 x 2 | Attach HackRF mounts |
+| Mounting holes (E-W) | For 6mm machine screws | 4 x 2 | Attach GPSDO mounts |
 
 #### 3D Printed Parts
 
