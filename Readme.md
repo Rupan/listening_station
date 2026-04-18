@@ -23,8 +23,8 @@ This listening station delivers professional-grade performance through careful c
 | [HackRF Pro](https://greatscottgadgets.com/hackrf/pro/) | - | Wideband SDR receiver |
 | [Mini-Circuits 6GHz Limiter](https://www.minicircuits.com/WebStore/dashboard.html?model=VLM-63-2W-S%2B) | VLM-63-2W-S+ | RF signal clipping & ESD protection |
 | [Mini-Circuits DC to 6 GHz Attenuator](https://www.minicircuits.com/WebStore/dashboard.html?model=K1-VAT-A%2B) | K1-VAT-A+ | Input attenuation for high-power signals |
-| [Double-shielded RG316 coax](https://www.ebay.com/itm/145242622653) | 10cm, SMA-M to SMA-M | Connects GPSDO to HackRF |
-| [15cm M-F RG316 coax pigtail](https://www.amazon.com/dp/B091TH6CCJ?th=1) | B091TH6CCJ | SMA bulkhead and HackRF Pro RF port with inline limiter |
+| [Double-shielded RG316D coax pigtail](https://www.ebay.com/itm/145242622653) | 10cm, SMA-M to SMA-M | Connects GPSDO to HackRF CLKIN |
+| [Shielded M-F RG316 coax pigtail](https://www.amazon.com/dp/B091TH6CCJ?th=1) | 15cm, B091TH6CCJ | SMA bulkhead for the ground plane and HackRF |
 | [SMA-M telescopic antenna](https://greatscottgadgets.com/ant500/) | ANT500 | Atatches to SMA bulkhead |
 
 Also check out [Signal Stick SMA-M](https://signalstuff.com/products/st-sma-m/) antennas for easy access to HAM bands.
@@ -53,16 +53,14 @@ Also check out [Signal Stick SMA-M](https://signalstuff.com/products/st-sma-m/) 
 
 | Component | Material & Spec | Purpose | Preview |
 |-----------|-----------------|---------|---------|
-| Base plate | FR-4 G10 Black fiberglass, 0.125" | Primary mounting surface | ![Base plate](assembly/base_plate.png) |
-| Ground plane | 5052 H32 Aluminum, 0.080" | RF shielding and counterpoise | ![Ground plane](assembly/ground_plane.png) |
+| [Base plate](assembly/base_plate.dxf) | FR-4 G10 Black fiberglass, 0.125" | Primary mounting surface | ![Base plate](assembly/base_plate.png) |
+| [Ground plane](assembly/ground_plane.dxf) | 5052 H32 Aluminum, 0.080" | RF shielding and counterpoise | ![Ground plane](assembly/ground_plane.png) |
 
-**Manufacturing files:**
-- [Base plate](assembly/base_plate.dxf)
-- [Ground plane](assembly/ground_plane.dxf)
+The linked manufacturing files  above are suitable for direct upload to [SendCutSend](https://sendcutsend.com/) or equivalent.
 
-These files are suitable for direct upload to [SendCutSend](https://sendcutsend.com/) or equivalent.
-
-The base plate has North-South through holes, mirrored, for mounting the HackRF and GPSDO.
+The base plate has mirrored through holes:
+- North-South, for mounting the HackRF
+- East-West, for mounting the GPSDO
 
 License: [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
@@ -71,20 +69,23 @@ License: [Creative Commons Attribution 4.0 International License](https://creati
 | Type | Specification | Quantity | Application |
 |------|---------------|----------|-------------|
 | M3-0.5 machine screws | 10mm | 4 | HackRF mounting brackets |
-| M3-0.5 machine screws | 6mm | 4 | GPSDO mounting bracket |
+| M3-0.5 machine screws | 7mm | 4 | GPSDO mounting bracket |
+| M3-0.5 Hex Nuts | DIN 439B thin | 8 | Secure machine screws for HackRF & GPSDO |
 | M2.5-0.5 thumb screws | 8mm | 6 per disc (12 total) | Attach outer plate standoffs |
-| M2.5-0.5 F-F standoffs | 20mm | 6 total | Plate spacers |
-| M2.5-0.5 M-F standoffs | 30mm | 6 total | Plate spacers |
-| Mounting holes (N-S) | For 10mm machine screws | 4 x 2 | Attach HackRF mounts |
-| Mounting holes (E-W) | For 6mm machine screws | 4 x 2 | Attach GPSDO mounts |
+| M2.5-0.5 F-F standoffs | 20mm | 6 | Plate spacers |
+| M2.5-0.5 M-F standoffs | 30mm | 6 | Plate spacers |
 
 #### 3D Printed Parts
 
-- [HackRF Mounting Brackets](https://www.thingiverse.com/thing:3019950) (original design)
+For the HackRF:
+- [Mount, source](https://www.thingiverse.com/thing:3019950) (original design)
 - [Mount, 1.0mm shorter](assembly/hackrf_mount_79mm_h-1.0.stl) (final design selection)
 - [Mount, 1.5mm shorter](assembly/hackrf_mount_79mm_h-1.5.stl) (may also work)
 
-**License:** These modified designs are based on the original [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
+The modified HackRF mount designs are all licensed under [CC4.0](https://creativecommons.org/licenses/by/4.0/).
+
+Leo Bodnar has kindly given permission to host the [STEP file](assembly/0006%20wide%20mounting%20base.step) for the LBE-006 used in this project.
+A tesselated STL variant, used for 3D printing, is available [here](assembly/0006%20wide%20mounting%20base.stl).
 
 ---
 
@@ -123,6 +124,16 @@ To see the difference yourself, tune GQRX to a known stable signal - a local NOA
 
 ---
 
-## Next Steps
+## Assembly
 
-Refer to assembly and configuration documentation for detailed build instructions.
+The base plate has two sets of mounting holes: outer M2.5 holes for the standoffs that support the ground plane, and inner M3 holes for mounting the electronics.
+
+1. Insert the female bulkhead of an M-F RG316 coax into the center hole of the ground plane and tighten the mounting bolt using an adjustable wrench.
+2. Position the HackRF over one of the N-S inner mounting areas, place the 3D-printed brackets over it, then secure using 4x M3×10mm machine screws and hex nuts.
+3. Install the GPSDO mounting bracket using the corresponding E-W inner mounting holes with 4x M3×7mm machine screws, then insert the GPSDO.
+4. Attach the USB hub to the plate between the remaining N-S inner HackRF mounting holes using Kapton tape.
+5. Attach 6x M2.5 standoffs to the outer mounting holes of the base plate using M2.5 thumb screws (recommended total height: 50cm).
+6. Attach an M-F RG316 coax to the HackRF's RF port.
+7. Install the limiter between the HackRF's RF coax (step 6) and the ground plane bulkhead coax (step 1).
+8. Connect the GPSDO to the HackRF's CLKIN port using an M-M 10cm RG316D coax, then connect the GPSDO's antenna.
+9. Align the ground plane with the M2.5 standoffs and secure using 6x M2.5 thumb screws.
