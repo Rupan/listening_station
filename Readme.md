@@ -138,12 +138,12 @@ To see the difference yourself, tune GQRX to a known stable signal - a local NOA
 
 The base plate has two sets of mounting holes: outer M2.5 holes for the standoffs that support the ground plane, and inner M3 holes for mounting the electronics.
 
-1. Insert the female bulkhead of an M-F RG316 coax into the center hole of the ground plane and tighten the mounting bolt using an adjustable wrench.
-2. Position the HackRF over one of the N-S inner mounting areas, place the 3D-printed brackets over it, then secure using 4x M3×10mm machine screws and hex nuts.
-3. Install the GPSDO mounting bracket using the corresponding E-W inner mounting holes with 4x M3×7mm machine screws, then insert the GPSDO.
-4. Attach the USB hub to the plate between the remaining N-S inner HackRF mounting holes using Kapton tape.
-5. Attach 6x M2.5 standoffs to the outer mounting holes of the base plate using M2.5 thumb screws (recommended total height: 50cm).
-6. Attach an M-F RG316 coax to the HackRF's RF port.
-7. Install the limiter between the HackRF's RF coax (step 6) and the ground plane bulkhead coax (step 1).
-8. Connect the GPSDO to the HackRF's CLKIN port using an M-M 10cm RG316D coax, then connect the GPSDO's antenna.
-9. Align the ground plane with the M2.5 standoffs and secure using 6x M2.5 thumb screws.
+1. Attach 6x M2.5 standoffs to the outer holes of the base plate using M2.5 thumb screws. These standoffs hold the ground plane above the base plate. Recommended total standoff height: 50mm.
+2. Insert the female bulkhead of the M-F RG316 coax into the center hole of the ground plane and tighten its mounting bolt.
+3. Mount the HackRF in the south device position using the 3D-printed brackets and 4x M3×10mm machine screws with hex nuts.
+4. Mount the GPSDO bracket in the west device position using 4x M3×7mm machine screws, then insert the GPSDO.
+5. Secure the StarTech USB hub in the north device position using its dedicated mounting holes.
+6. Connect the HackRF RF port to the limiter with an M-F RG316 coax.
+7. Connect the limiter output to the ground plane bulkhead coax.
+8. Connect the GPSDO to the HackRF CLKIN port using the 10cm M-M RG316D coax, then attach the GPSDO antenna.
+9. Align the ground plane with the M2.5 standoffs and secure it using 6x M2.5 thumb screws.
