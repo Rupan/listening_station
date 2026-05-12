@@ -58,11 +58,21 @@ Also check out [Signal Stick SMA-M](https://signalstuff.com/products/st-sma-m/) 
 
 The linked manufacturing files  above are suitable for direct upload to [SendCutSend](https://sendcutsend.com/) or equivalent.
 
-The base plate has mirrored through holes:
-- North-South, for mounting the HackRF
-- East-West, for mounting the GPSDO
+The base plate features through holes for mounting the following components:
+- South position: HackRF (using 3D-printed brackets)
+- West position: GPSDO (using the LBE-006 bracket, older variant)
+- North position: USB hub
 
-License: [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
+The DXF files are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
+The base plate DXF file in this repository contains three layers:
+- Layer 0: The circular outline plus mounting holes: M2.5 outer for standoffs and M3 inner for devices
+- Layer 1: Outlines of the electronics to be mounted (HackRF, GPSDO, USB hub)
+- Layer 2: Path for the 10cm RG316D clock signal cable
+
+Prior to manufacturing, remove layers 1 and 2 from the base plate DXF file.
+
+Note: Leo Bodnar has two variants of the LBE-006 bracket. The base plate DXF is designed for the older variant. When ordering the LBE-006 from Leo Bodnar, specifically request the older variant. If it's no longer available, either 3D print using the provided STL file or modify the mounting holes to match the newer bracket's requirements (M3 holes spaced 20mm [X-axis] by 30mm [Y-axis] center-to-center).
 
 #### Fasteners & Mounts
 
