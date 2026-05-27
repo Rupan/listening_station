@@ -14,6 +14,14 @@ This listening station delivers professional-grade performance through careful c
 
 ---
 
+## Photos
+
+| Top view | Side view |
+|----------|-----------|
+| ![Base plate top view](photos/Base_plate_top.jpeg) | ![Base plate side view](photos/Base_Plate_side.jpeg) |
+
+---
+
 ## Bill of Materials
 
 ### Radio Frequency Hardware
@@ -56,7 +64,9 @@ Also check out [Signal Stick SMA-M](https://signalstuff.com/products/st-sma-m/) 
 | [Base plate](assembly/base_plate.dxf) | FR-4 G10 Black fiberglass, 0.125" | Primary mounting surface | ![Base plate](assembly/base_plate.png) |
 | [Ground plane](assembly/ground_plane.dxf) | 5052 H32 Aluminum, 0.080" | RF shielding and counterpoise | ![Ground plane](assembly/ground_plane.png) |
 
-The linked manufacturing files  above are suitable for direct upload to [SendCutSend](https://sendcutsend.com/) or equivalent.
+The linked manufacturing files above are suitable for direct upload to [SendCutSend](https://sendcutsend.com/) or equivalent.
+
+> **V2 base plate:** We finally received the correct V2 base plate with the holes properly placed. The initial version had wrong hole placement, so we had to re-measure and produce an updated plate with correct mounting hole dimensions. We're happy to have finally landed on a design that mounts all devices in exactly the right positions.
 
 The base plate features through holes for mounting the following components:
 - South position: HackRF (using 3D-printed brackets)
@@ -132,6 +142,8 @@ The HackRF Pro ships with a built-in TCXO that's decent for casual use, but it s
 
 To see the difference yourself, tune GQRX to a known stable signal - a local NOAA weather broadcast or an AM carrier works well. With the HackRF running on its internal oscillator, watch the waterfall over 15-20 minutes as the board warms up. You'll see the signal trace slowly wander left or right as the internal clock drifts, sometimes shifting by several hundred hertz. Now connect the GPSDO to CLKIN and restart GQRX. That same signal will pin to a single column in the waterfall and stay there indefinitely - no wander, no drift, just a rock-solid line. The visual difference is immediate and striking: a meandering smear versus a razor-sharp trace.
 
+![GQRX waterfall with GPSDO locked — signal pinned to a single column](photos/GQRX_Waterfall.jpeg)
+
 ---
 
 ## Assembly
@@ -147,3 +159,9 @@ The base plate has two sets of mounting holes: outer M2.5 holes for the standoff
 7. Connect the limiter output to the ground plane bulkhead coax.
 8. Connect the GPSDO to the HackRF CLKIN port using the 10cm M-M RG316D coax, then attach the GPSDO antenna.
 9. Align the ground plane with the M2.5 standoffs and secure it using 6x M2.5 thumb screws.
+
+---
+
+## Next Steps
+
+With the build complete, we are finally ready to scan the wireless spectrum from 30 MHz to 6 GHz with a 20 MHz instantaneous bandwidth. Our immediate challenge is capturing signals from household remotes as a first step toward building a home automation system. The tricky part is that many of these devices operate in the crowded 2.4 GHz ISM band, so filtering out the noise will be the main hurdle. We'll continue exploring techniques to isolate and decode those signals as the project moves forward.
