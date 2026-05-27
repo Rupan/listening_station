@@ -58,11 +58,21 @@ Also check out [Signal Stick SMA-M](https://signalstuff.com/products/st-sma-m/) 
 
 The linked manufacturing files  above are suitable for direct upload to [SendCutSend](https://sendcutsend.com/) or equivalent.
 
-The base plate has mirrored through holes:
-- North-South, for mounting the HackRF
-- East-West, for mounting the GPSDO
+The base plate features through holes for mounting the following components:
+- South position: HackRF (using 3D-printed brackets)
+- West position: GPSDO (using the LBE-006 bracket, older variant)
+- North position: USB hub
 
-License: [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
+The DXF files are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
+The base plate DXF file in this repository contains three layers:
+- Layer 0: The circular outline plus mounting holes: M2.5 outer for standoffs and M3 inner for devices
+- Layer 1: Outlines of the electronics to be mounted (HackRF, GPSDO, USB hub)
+- Layer 2: Path for the 10cm RG316D clock signal cable
+
+Prior to manufacturing, remove layers 1 and 2 from the base plate DXF file.
+
+Note: Leo Bodnar has two variants of the LBE-006 bracket. The base plate DXF is designed for the older variant. When ordering the LBE-006 from Leo Bodnar, specifically request the older variant. If it's no longer available, either 3D print using the provided STL file or modify the mounting holes to match the newer bracket's requirements (M3 holes spaced 20mm [X-axis] by 30mm [Y-axis] center-to-center).
 
 #### Fasteners & Mounts
 
@@ -128,12 +138,12 @@ To see the difference yourself, tune GQRX to a known stable signal - a local NOA
 
 The base plate has two sets of mounting holes: outer M2.5 holes for the standoffs that support the ground plane, and inner M3 holes for mounting the electronics.
 
-1. Insert the female bulkhead of an M-F RG316 coax into the center hole of the ground plane and tighten the mounting bolt using an adjustable wrench.
-2. Position the HackRF over one of the N-S inner mounting areas, place the 3D-printed brackets over it, then secure using 4x M3×10mm machine screws and hex nuts.
-3. Install the GPSDO mounting bracket using the corresponding E-W inner mounting holes with 4x M3×7mm machine screws, then insert the GPSDO.
-4. Attach the USB hub to the plate between the remaining N-S inner HackRF mounting holes using Kapton tape.
-5. Attach 6x M2.5 standoffs to the outer mounting holes of the base plate using M2.5 thumb screws (recommended total height: 50cm).
-6. Attach an M-F RG316 coax to the HackRF's RF port.
-7. Install the limiter between the HackRF's RF coax (step 6) and the ground plane bulkhead coax (step 1).
-8. Connect the GPSDO to the HackRF's CLKIN port using an M-M 10cm RG316D coax, then connect the GPSDO's antenna.
-9. Align the ground plane with the M2.5 standoffs and secure using 6x M2.5 thumb screws.
+1. Attach 6x M2.5 standoffs to the outer holes of the base plate using M2.5 thumb screws. These standoffs hold the ground plane above the base plate. Recommended total standoff height: 50mm.
+2. Insert the female bulkhead of the M-F RG316 coax into the center hole of the ground plane and tighten its mounting bolt.
+3. Mount the HackRF in the south device position using the 3D-printed brackets and 4x M3×10mm machine screws with hex nuts.
+4. Mount the GPSDO bracket in the west device position using 4x M3×7mm machine screws, then insert the GPSDO.
+5. Secure the StarTech USB hub in the north device position using its dedicated mounting holes.
+6. Connect the HackRF RF port to the limiter with an M-F RG316 coax.
+7. Connect the limiter output to the ground plane bulkhead coax.
+8. Connect the GPSDO to the HackRF CLKIN port using the 10cm M-M RG316D coax, then attach the GPSDO antenna.
+9. Align the ground plane with the M2.5 standoffs and secure it using 6x M2.5 thumb screws.
